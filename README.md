@@ -115,17 +115,6 @@ api-integration-project
 Configure o webhook para o número de WhatsApp que você configurou. Defina a URL do webhook para apontar para o endpoint /webhook do seu servidor Express.
 1. **Atualize as credenciais no arquivo whatsappApi.ts:** 
 Substitua your_account_sid e your_auth_token pelas suas credenciais do Twilio.
-
-## Contribuindo
-
-Sinta-se à vontade para enviar issues ou pull requests para melhorias ou correções de bugs.
-
-## Subir o Projeto para o GitHub
-
-1. **Crie um novo repositório no GitHub:**
-   - Vá para [GitHub](https://github.com) e crie um novo repositório.
-
-2. **Inicialize um repositório Git localmente:**
    ```bash
    git init
    ```
