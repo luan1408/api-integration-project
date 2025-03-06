@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  meta-api:
+    build: ./meta-api
+    ports:
+      - "3002:3000"
+    environment:
+      - NODE_ENV=production
+    dns:
+      - 8.8.8.8  # Servidor DNS do Google
+
+  deepseek-api:
+    build: ./deepseek-api
+    ports:
+      - "3003:3000"
+    environment:
+      - NODE_ENV=production
+    dns:
+      - 8.8.8.8  # Servidor DNS do Google
+
+  api-integration:
+    build: .
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+    dns:
+      - 8.8.8.8  # Servidor DNS do Google
+
+networks:
+  default:
+    driver: bridge
