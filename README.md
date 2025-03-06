@@ -11,7 +11,10 @@ api-integration-project
 │   │   └── metaApi.ts       # Implementação para interagir com a Meta Cloud API
 │   ├── deepseek
 │   │   └── deepseekApi.ts    # Implementação para integrar com a DeepSeek API
+│   ├── whatsapp
+│   │   └── whatsappApi.ts    # Implementação para integrar com a API do WhatsApp
 │   └── index.ts              # Ponto de entrada para a aplicação
+│   └── server.ts             # Servidor Express para receber webhooks do WhatsApp
 ├── Dockerfile                 # Dockerfile para construir a imagem Docker
 ├── docker-compose.yml         # Configuração do Docker Compose para os serviços
 ├── package.json               # Arquivo de configuração do npm com dependências
@@ -103,6 +106,15 @@ api-integration-project
 
 - **Meta Cloud API**: Consulte a documentação oficial da Meta para detalhes sobre endpoints, autenticação e uso.
 - **DeepSeek API**: Verifique a documentação da DeepSeek API para informações sobre capacidades de busca e manipulação de resultados.
+
+## Configuração do Bot do WhatsApp
+##  1.Obtenha as credenciais da API do WhatsApp:
+ Configure a API do WhatsApp usando um serviço como Twilio e obtenha o Account SID e o Auth Token.
+
+## 2.Configure o Webhook no Twilio: 
+Configure o webhook para o número de WhatsApp que você configurou. Defina a URL do webhook para apontar para o endpoint /webhook do seu servidor Express.
+## 3.Atualize as credenciais no arquivo whatsappApi.ts: 
+Substitua your_account_sid e your_auth_token pelas suas credenciais do Twilio.
 
 ## Contribuindo
 

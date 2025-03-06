@@ -60,3 +60,16 @@ export const getDeepSeekData = async () => {
         throw error;
     }
 };
+
+export const getDeepSeekResponse = async (query: string) => {
+  try {
+    const response = await axios.post('https://api.deepseek.com/query', {
+      query: query,
+      // Adicione outros parâmetros necessários para a API da DeepSeek
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching DeepSeek response:', error);
+    return 'Desculpe, não consegui processar sua solicitação.';
+  }
+};

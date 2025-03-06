@@ -1,5 +1,6 @@
 import { getMetaData } from './meta/metaApi';
-import { getDeepSeekData } from './deepseek/deepseekApi';
+import { getDeepSeekData, getDeepSeekResponse } from './deepseek/deepseekApi';
+import { sendMessage } from './whatsapp/whatsappApi';
 
 const run = async () => {
     try {
@@ -14,3 +15,13 @@ const run = async () => {
 };
 
 run();
+
+export const handleIncomingMessage = async (message: string, from: string) => {
+  // Obter resposta da API da DeepSeek
+  const response = await getDeepSeekResponse(message);
+  // Enviar resposta para o usuário no WhatsApp
+  await sendMessage(from, response);
+};
+
+// Exemplo de uso
+handleIncomingMessage('Olá, como você está?', '+1234567890');
